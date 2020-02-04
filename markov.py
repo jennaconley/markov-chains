@@ -18,34 +18,27 @@ def make_chains(text_string):
     for i in range(len(words)-2):
         key = (words[i], words[i + 1])
         value = (words[i + 2])
-        print(key, ":", value)
         
         if key not in chains:
             chains[key] = []
-      
 
-
-
+        chains[key].append(value)
+        #print(key, chains[key])
+    #print(chains)
+     
     """Take input text as string; return dictionary of Markov chains.
-
     A chain will be a key that consists of a tuple of (word1, word2)
     and the value would be a list of the word(s) that follow those two
     words in the input text.
 
     For example:
-    
         >>> chains = make_chains("hi there mary hi there juanita")
-
     Each bigram (except the last) will be a key in chains:
-
         >>> sorted(chains.keys())py
         [('hi', 'there'), ('mary', 'hi'), ('there', 'mary')]
-
     Each item in chains is a list of all possible following words:
-
         >>> chains[('hi', 'there')]
         ['mary', 'juanita']
-        
         >>> chains[('there','juanita')]
         [None]
     """
@@ -54,6 +47,9 @@ def make_chains(text_string):
     return chains
 
 make_chains(text_string)
+
+
+print(make_chains(text_string))
 
 
 
