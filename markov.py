@@ -4,15 +4,10 @@ from random import choice
 
 
 def open_and_read_file(file_path):
-    """Take file path as string; return text as string.
 
-    Takes a string that is a file path, opens the file, and turns
-    the file's contents as one string of text.
-    """
+    contents = open(file_path).read()
 
-    # your code goes here
-
-    return "Contents of your file as one long string"
+    return contents
 
 
 def make_chains(text_string):
@@ -59,6 +54,9 @@ def make_text(chains):
 
 input_path = "green-eggs.txt"
 
+print(type(open_and_read_file(input_path)))
+
+"""
 # Open the file and turn it into one long string
 input_text = open_and_read_file(input_path)
 
@@ -68,4 +66,4 @@ chains = make_chains(input_text)
 # Produce random text
 random_text = make_text(chains)
 
-print(random_text)
+print(random_text)"""
