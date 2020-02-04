@@ -13,11 +13,16 @@ text_string = open_and_read_file(input_path)
 
 
 def make_chains(text_string):
+    chains = {}
     words = text_string.split()
-    for index in range(len(words)-2):
-        print(index, (index + 1), (index + 2))
-        print(words[index], words[index + 1], words[index + 2])
-        print('')
+    for i in range(len(words)-2):
+        key = (words[i], words[i + 1])
+        value = (words[i + 2])
+        print(key, ":", value)
+        
+        if key not in chains:
+            chains[key] = []
+      
 
 
 
@@ -44,7 +49,7 @@ def make_chains(text_string):
         >>> chains[('there','juanita')]
         [None]
     """
-    chains = {}
+    
     # your code goes here
     return chains
 
