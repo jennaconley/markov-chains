@@ -46,7 +46,7 @@ def make_chains(text_string):
     # your code goes here
     return chains
 
-#calling make_chains function and assigning it to the variable chains
+#calling make_chains function and assigning it to t+he variable chains
 chains = make_chains(text_string)
 
 
@@ -54,27 +54,34 @@ chains = make_chains(text_string)
 def make_text(chainsDictionary):
     """Return text from chains."""
 
-    wordList = []
-
-#randomly select first key pop()??
-
-#add first key to wordList
-
-#A. chose a word (randomly within that key's value list) to follow key
-
-#append new word to output list: wordList
-
-#look for a new key: (2nd word of old key, new word)
-#if (2nd word of old key, new word) in chainsDictionary go back to A and repeat steps
+    #Create a blank list to load text into later:
+    word_list = []
+    #randomly select starting value for key:
+    current_key = choice(list(chainsDictionary.keys()))
+    #add both of values in key to end of word_list:
+    word_list.extend(list(current_key))
 
 
+    #Loop:
+    while current_key in chainsDictionary.keys():
+        #randomly select an item from the value list attached to current_key:
+        word_from_value_list = choice(chainsDictionary[current_key])
+        #add the new value of word_from_value_list to end of wordlist:
+        word_list.append(word_from_value_list)
 
-
-
-
+        #find a a new key: (2nd word of old key, new word)
+        current_key = (current_key[1], word_from_value_list)
+        print(current_key)
+        
+    print(word_list)
 
     # anystring.join(name_of_iterable_to_be_joined)
-    return "our_markov_string".join(wordslist)
+    pass
+    return "our_markov_string".join(word_list)
+
+
+#Call the funtion that was just defined:
+make_text(chains)
 
 
 
