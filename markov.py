@@ -46,35 +46,58 @@ def make_chains(text_string):
     # your code goes here
     return chains
 
-make_chains(text_string)
-
-
-print(make_chains(text_string))
+#calling make_chains function and assigning it to the variable chains
+chains = make_chains(text_string)
 
 
 
-def make_text(chains):
+def make_text(chainsDictionary):
     """Return text from chains."""
 
-    words = []
+    wordList = []
 
-    # your code goes here
+#randomly select first key pop()??
 
-    return " ".join(words)
+#add first key to wordList
 
+#A. chose a word (randomly within that key's value list) to follow key
+
+#append new word to output list: wordList
+
+#look for a new key: (2nd word of old key, new word)
+#if (2nd word of old key, new word) in chainsDictionary go back to A and repeat steps
+
+
+
+
+
+
+
+    # anystring.join(name_of_iterable_to_be_joined)
+    return "our_markov_string".join(wordslist)
+
+
+
+# Produce random text
+#random_text = make_text(chains)
+
+#print(random_text)"
+
+
+
+
+
+"""
+Notes in progress (variable names may not entirely match ours)
 
 #input_path = "green-eggs.txt"
 
 #print(type(open_and_read_file(input_path)))
 
-"""
+
 # Open the file and turn it into one long string
 input_text = open_and_read_file(input_path)
 
 # Get a Markov chain
 chains = make_chains(input_text)
-
-# Produce random text
-random_text = make_text(chains)
-
-print(random_text)"""
+"""
