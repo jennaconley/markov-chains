@@ -69,19 +69,22 @@ def make_text(chainsDictionary):
         #add the new value of word_from_value_list to end of wordlist:
         word_list.append(word_from_value_list)
 
-        #find a a new key: (2nd word of old key, new word)
+        #format new key for next cucle of loop: ((2nd word of old key), (word_from_value_list that was selected above))
         current_key = (current_key[1], word_from_value_list)
-        print(current_key)
-        
-    print(word_list)
+       
+    #post-loop wrap-up:
+    
 
-    # anystring.join(name_of_iterable_to_be_joined)
-    pass
-    return "our_markov_string".join(word_list)
+    # use method to add list values into a string with a space between each:
+    # join method --->  " ".join(name_of_iterable_to_be_joined)
+
+    outputstring = " ".join(word_list)
+    return outputstring
+
 
 
 #Call the funtion that was just defined:
-make_text(chains)
+print(make_text(chains))
 
 
 
